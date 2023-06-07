@@ -1,6 +1,7 @@
 'use client'
 import Header from './Header'
 import Info from './Info'
+import ShortLinks from './ShortLinks'
 import '../../css/home/home.css'
 
 export default function Index() {
@@ -8,6 +9,7 @@ export default function Index() {
     <div className='app'>
       <Header/>
       <Info/>
+      <ShortLinks/>
     </div>
   )
 }

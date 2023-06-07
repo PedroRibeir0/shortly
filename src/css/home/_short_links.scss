@@ -1,0 +1,44 @@
+.short-links{
+    background-color: $dark-violet;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    margin-bottom: 150px;
+    margin-top: 80px;
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+
+    .link-input{
+        width: 100%;
+        height: 50px;
+        padding: 0 15px;
+        border-radius: 7px;
+        border: none;
+        outline: none;
+        line-height: 30px; 
+        color: darken($color: $grayish-violet, $amount: 10);       
+
+        &::placeholder{
+
+            font-weight: 500;
+            font-size: 16px;
+            color: $grayish-violet;
+        }
+    }
+
+    .shorten-it-button{
+        background-color: $cyan;
+        border: none;
+        color: white;
+        font-weight: 700;
+        font-size: 17px;
+        width: 100%;
+        height: 50px;
+        border-radius: 7px;
+    }
+}
