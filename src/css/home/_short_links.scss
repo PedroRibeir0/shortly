@@ -2,15 +2,15 @@
     background-color: $dark-violet;
     background-repeat: no-repeat;
     background-position: 100% 0;
-    margin-bottom: 150px;
-    margin-top: 80px;
+    margin-bottom: 30px;
+    margin-top: 50px;
     width: 100%;
     padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     border-radius: 10px;
 
     .link-input{
@@ -31,7 +31,23 @@
         }
     }
 
+    .warning{
+        display: none;
+    }
+
+    input:invalid:focus{
+        outline: 2px solid $red;
+    }
+    input:invalid:focus + .warning{
+        display: inline;
+        color: $red;
+        align-self: flex-start;
+        font-style: italic;
+        font-size: 15px;
+    }
+
     .shorten-it-button{
+        margin-top: 10px;
         background-color: $cyan;
         border: none;
         color: white;
@@ -40,5 +56,13 @@
         width: 100%;
         height: 50px;
         border-radius: 7px;
+
+        &:active{
+            transform: scale(0.98);
+        }
+
+        &:hover{
+            background-color: lighten($color: $cyan, $amount: 12);
+        }
     }
 }

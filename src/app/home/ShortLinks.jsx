@@ -6,9 +6,12 @@ export default function ShortLinks() {
   }
 
   return (
-    <div className="short-links" style={style}>
-      <input className="link-input" type="text" placeholder="Shorten a link here..."/>
-      <button className="shorten-it-button">Shorten It!</button>
-    </div>
+    <form className="short-links" style={style}>
+      <input required className="link-input" type="text" placeholder="Shorten a link here..."/>
+      <span className="warning">Please add a link</span>
+      <button onClick={e=>{
+        e.preventDefault()
+      }} className="shorten-it-button">Shorten It!</button>
+    </form>
   )
 }

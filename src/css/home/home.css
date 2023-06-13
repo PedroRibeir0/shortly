@@ -19,14 +19,14 @@ header .menu-icon {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  color: hsl(257, 7%, 63%);
+  color: #9e9aa7;
   cursor: pointer;
 }
 header .menu-icon:active {
   transform: scale(0.92);
 }
 header .menu-container {
-  background-color: hsl(257, 27%, 26%);
+  background-color: #3b3054;
   top: 90px;
   left: 50%;
   transform: translateX(-50%);
@@ -47,14 +47,14 @@ header .menu-container .menu-opt {
   cursor: pointer;
 }
 header .menu-container .menu-opt:hover {
-  color: hsl(0, 0%, 75%);
+  color: #bfbfbf;
 }
 header .menu-container .menu-opt:nth-child(4) {
   padding-top: 25px;
   border-top: 1px solid rgba(201, 201, 201, 0.5);
 }
 header .menu-container .menu-opt:nth-child(5) {
-  background-color: hsl(180, 66%, 49%);
+  background-color: #2acfcf;
   padding: 12px;
   border-radius: 50px;
 }
@@ -62,7 +62,7 @@ header .menu-container .menu-opt:nth-child(5):active {
   transform: scale(0.96);
 }
 header .menu-container .menu-opt:nth-child(5):hover {
-  background-color: #5adddd;
+  background-color: #59dddd;
   color: white;
 }
 
@@ -89,15 +89,15 @@ header .menu-container .menu-opt:nth-child(5):hover {
 .info .call-to-action .info-h {
   font-size: 40px;
   line-height: 42px;
-  color: hsl(255, 11%, 22%);
+  color: #35323e;
 }
 .info .call-to-action .info-p {
-  color: hsl(257, 7%, 63%);
+  color: #9e9aa7;
   font-size: 16px;
   font-weight: 500;
 }
 .info .call-to-action .get-started-button {
-  background-color: hsl(180, 66%, 49%);
+  background-color: #2acfcf;
   border: none;
   padding: 10px 32px;
   border-radius: 25px;
@@ -110,22 +110,22 @@ header .menu-container .menu-opt:nth-child(5):hover {
   transform: scale(0.96);
 }
 .info .call-to-action .get-started-button:hover {
-  background-color: #5adddd;
+  background-color: #59dddd;
 }
 
 .short-links {
-  background-color: hsl(257, 27%, 26%);
+  background-color: #3b3054;
   background-repeat: no-repeat;
   background-position: 100% 0;
-  margin-bottom: 150px;
-  margin-top: 80px;
+  margin-bottom: 30px;
+  margin-top: 50px;
   width: 100%;
   padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   border-radius: 10px;
 }
 .short-links .link-input {
@@ -136,20 +136,34 @@ header .menu-container .menu-opt:nth-child(5):hover {
   border: none;
   outline: none;
   line-height: 30px;
-  color: #847f90;
+  color: #847f8f;
 }
 .short-links .link-input::-moz-placeholder {
   font-weight: 500;
   font-size: 16px;
-  color: hsl(257, 7%, 63%);
+  color: #9e9aa7;
 }
 .short-links .link-input::placeholder {
   font-weight: 500;
   font-size: 16px;
-  color: hsl(257, 7%, 63%);
+  color: #9e9aa7;
+}
+.short-links .warning {
+  display: none;
+}
+.short-links input:invalid:focus {
+  outline: 2px solid #f46262;
+}
+.short-links input:invalid:focus + .warning {
+  display: inline;
+  color: #f46262;
+  align-self: flex-start;
+  font-style: italic;
+  font-size: 15px;
 }
 .short-links .shorten-it-button {
-  background-color: hsl(180, 66%, 49%);
+  margin-top: 10px;
+  background-color: #2acfcf;
   border: none;
   color: white;
   font-weight: 700;
@@ -158,7 +172,77 @@ header .menu-container .menu-opt:nth-child(5):hover {
   height: 50px;
   border-radius: 7px;
 }
+.short-links .shorten-it-button:active {
+  transform: scale(0.98);
+}
+.short-links .shorten-it-button:hover {
+  background-color: #59dddd;
+}
 
-.app {
+.links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.links .link {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
+  gap: 12px;
+  border-radius: 7px;
+}
+.links .link .full-url, .links .link .short-url {
+  max-width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-weight: 500;
+}
+.links .link .full-url {
+  color: #232127;
+}
+.links .link .short-url {
+  border-top: 1px solid #dedede;
+  width: 100%;
+  padding-top: 10px;
+}
+.links .link .short-url a {
+  color: #2acfcf;
+  text-decoration: none;
+}
+.links .link .short-url a:hover {
+  text-decoration: underline;
+}
+.links .link .copy-button {
+  background-color: #2acfcf;
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 7px;
+}
+
+.app section {
+  padding: 20px;
+  width: 100%;
+}
+
+.bg-1 {
+  background-color: white;
+}
+
+.bg-2 {
+  background-color: #EFF1F7;
 }/*# sourceMappingURL=home.css.map */

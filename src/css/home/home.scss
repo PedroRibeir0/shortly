@@ -1,13 +1,24 @@
-$gray: hsl(0, 0%, 75%);
-$grayish-violet: hsl(257, 7%, 63%);
-$very-dark-blue: hsl(255, 11%, 22%);
-$very-dark-violet: hsl(260, 8%, 14%);
-$cyan: hsl(180, 66%, 49%);
-$dark-violet: hsl(257, 27%, 26%);
-$red: hsl(0, 87%, 67%);
+$gray: #bfbfbf;
+$grayish-violet: #9e9aa7;
+$very-dark-blue: #35323e;
+$very-dark-violet: #232127;
+$cyan: #2acfcf;
+$dark-violet: #3b3054;
+$red: #f46262;
+$bg-1: white;
+$bg-2: #EFF1F7;
 
-@import 'header', 'info', 'short_links';
+@import 'header', 'info', 'short_links', 'links';
 
-.app{
+.app section{
     padding: 20px;
+    width: 100%;
+}
+
+.bg-1{
+    background-color: $bg-1;
+}
+
+.bg-2{
+    background-color: $bg-2;
 }
