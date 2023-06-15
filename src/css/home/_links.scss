@@ -57,6 +57,14 @@
             font-weight: 700;
             font-size: 17px;
             border-radius: 7px;
+
+            &:active{
+                transform: scale(0.98);
+            }
+    
+            &:hover{
+                background-color: lighten($color: $cyan, $amount: 12);
+            }
         }
     }
 

@@ -8,4 +8,8 @@
 
 html, body, input, button {
   font-family: "Poppins", sans-serif;
+}
+
+button {
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

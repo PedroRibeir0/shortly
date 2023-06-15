@@ -31,24 +31,6 @@
             font-weight: 500;
         }
 
-        .get-started-button{
-            background-color: $cyan;
-            border: none;
-            padding: 10px 32px;
-            border-radius: 25px;
-            color: white;
-            font-weight: 700;
-            font-size: 17px;
-            cursor: pointer;
-
-            &:active{
-                transform: scale(0.96);
-            }
-
-            &:hover{
-                background-color: lighten($color: $cyan, $amount: 12);
-            }
-        }
     }
 }
 

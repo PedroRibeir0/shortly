@@ -20,7 +20,7 @@ export default function Header() {
 
   return (
     <header>
-      <img src="/images/logo.svg" alt="" />
+      <img src="/images/logo.svg" alt="brand-logo" />
       <TfiMenu className='menu-icon' onClick={e=>setIsMenuOpen(!isMenuOpen)}/>
       {isMenuOpen && <Menu/>}
     </header>
