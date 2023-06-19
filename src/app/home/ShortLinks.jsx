@@ -1,5 +1,5 @@
 
-export default function ShortLinks() {
+export default function ShortLinks(props) {
 
   const style = {
     backgroundImage : 'url("/images/bg-shorten-mobile.svg")'
@@ -11,7 +11,7 @@ export default function ShortLinks() {
       <span className="warning">Please add a link</span>
       <button onClick={e=>{
         e.preventDefault()
-      }} className="shorten-it-button">Shorten It!</button>
+      }} className="shorten-it-button" onClickCapture={props.short}>Shorten It!</button>
     </form>
   )
 }

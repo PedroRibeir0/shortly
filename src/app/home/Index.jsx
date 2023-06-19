@@ -6,26 +6,43 @@ import Link from './Link'
 import Statistics from './Statistics'
 import Footer from './Footer'
 import '../../css/home/home.css'
-import { useState } from 'react'
-import { METHODS } from 'http'
+import { useState, useEffect } from 'react'
+
 
 export default function Index() {
 
-  const [links, setLinks] = useState([
-    {url: 'https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium', shortUrl: 'https://rel.ink/k4Pixy'},
-    {url: 'https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium', shortUrl: 'https://rel.ink/k4Pixo'},
-    {url: 'https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium', shortUrl: 'https://rel.ink/k4Pcxp'}
-  ])
+  const [links, setLinks] = useState([])
+  const [shotLink, setShortLink] = useState('')
+  
+  const endPoint = 'https://api-ssl.bitly.com/v4/shorten'; 
+  const token = 'c7c7e7d44c1a28ad7596ead52fa89fcd02c585c5'; 
+  
+  async function apiRequest(){
+    const linkInput = document.querySelectorAll('.link-input')[0].value
+    const body = {
+      long_url: linkInput,
+      domain: 'bit.ly',
+    };
 
-fetch('https://cleanuri.com/api/v1/shorten', {
-  Method: 'POST',
-  Headers: {
-    Accept: 'application.json',
-    'Content-Type': 'application/json'
-  },
-  Body: 'url=https://fonts.google.com/specimen/Open+Sans',
-  Cache: 'default'
-}).then(response=> console.log(response))
+    const response = await fetch(endPoint, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    })
+    const data = await response.json()
+    if (!data.link) {
+      window.alert('Invalid URL')
+      return
+    }
+    const newLink = {
+      url: linkInput,
+      shortUrl: data.link
+    }
+    setLinks([...links, newLink])
+  }
 
   return (
     <div className='app'>
@@ -34,11 +51,12 @@ fetch('https://cleanuri.com/api/v1/shorten', {
         <Info/>
       </section>
       <section className='bg-2'>
-        <ShortLinks/>
+        <ShortLinks
+          short={apiRequest}/>
         <ul className='links'>
           {links.map(item=>{
             return <Link 
-              key={item.shortUrl}
+              key={links.indexOf(item)}
               fullUrl={item.url}
               shortUrl={item.shortUrl}
             />
