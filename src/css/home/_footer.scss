@@ -15,6 +15,9 @@
     align-items: center;
     color: white;
     gap: 20px;
+    @media screen and (min-width: 1024px) {
+     padding: 70px 0;       
+    }
 }
 
 footer{
@@ -25,10 +28,29 @@ footer{
     justify-content: center;
     align-items: center;
     padding: 40px 0;
+    @media screen and (min-width: 1024px) {
+     flex-direction: row; 
+     align-items: start;  
+     justify-content: space-between;    
+     gap: 50px;
+     padding: 50px 100px;
+    }
 
     h2{
         margin-bottom: 10px;
+        @media screen and (min-width: 1024px) {
+         margin-bottom: 0;   
+         margin-right: 100px;
+        }
+    }
 
+    .footer-links{
+        @media screen and (min-width: 1024px) {
+         display: flex;
+         justify-content: center;
+         align-items: start;  
+         gap: 60px; 
+        }
     }
 
     ul{
@@ -38,6 +60,10 @@ footer{
         justify-content: center;
         align-items: center;
         margin-top: 25px;
+        @media screen and (min-width: 1024px) {
+         margin-top: 0;
+         align-items: start;   
+        }
 
         li{
             color: $grayish-violet;
@@ -57,5 +83,17 @@ footer{
         flex-direction: row;
         align-items: end;
         gap: 25px;
+        margin-top: 40px;
+        li{
+            &:first-child{
+                margin-top: 0;
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            align-items: start;
+            margin-top: 5px;
+
+
+        }
     }
 }

@@ -6,12 +6,19 @@ import Link from './Link'
 import Statistics from './Statistics'
 import Footer from './Footer'
 import '../../css/home/home.css'
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 
 
 export default function Index() {
 
-  const [links, setLinks] = useState([])
+  const [links, setLinks] = useState([
+    {url: 'https://www.alura.com.br/artigos/como-resolver-erro-de-cross-origin-resource-sharing?gclid=Cj0KCQjw7aqkBhDPARIsAKGa0oIVcsgPbcMSNtv9Zss7qi4pENphqEgO3JLiMqeA358L1X42xn1v6g8aAqRgEALw_wcB',
+    shortUrl: 'https://api-ssl.bitly.com'
+  },
+    {url: 'https://www.alura.com.br/artigos',
+    shortUrl: 'https://api-ssl.bitluy.com'
+  }
+  ])
   const [shotLink, setShortLink] = useState('')
   
   const endPoint = 'https://api-ssl.bitly.com/v4/shorten'; 

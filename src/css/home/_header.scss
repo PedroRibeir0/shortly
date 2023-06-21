@@ -9,6 +9,17 @@ header{
     padding: 20px;
     background-color: white;
     z-index: 1000;
+    
+    @media screen and (min-width: 768px) {
+        padding: 30px;
+    }
+    @media screen and (min-width: 1024px) {
+        padding: 30px 100px;
+        max-width: 1280px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
 
     .logo{
         user-select: none;
@@ -19,6 +30,9 @@ header{
         appearance: none;
         color: $grayish-violet;
         cursor: pointer;
+        @media screen and (min-width: 768px) {
+            font-size: 30px;
+        }
 
         &:active{
             transform: scale(0.92);
@@ -42,6 +56,17 @@ header{
         list-style: none;
         font-weight: 700;
         font-size: 18px;
+        @media screen and (min-width: 768px) {
+            top: 110px;
+            width: 65%;
+        }
+        @media screen and (min-width: 1024px) {
+            width: 20%;
+            transform: none;
+            left: 79%;
+
+        }
+
 
         .menu-opt{
             cursor: pointer;

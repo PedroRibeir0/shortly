@@ -6,6 +6,11 @@
     align-items: center;
     margin-bottom: 50px;
     gap: 20px;
+    @media screen and (min-width: 768px) {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     
     .link{
         width: 100%;
@@ -17,6 +22,10 @@
         padding: 20px;
         gap: 12px;
         border-radius: 7px;
+        @media screen and (min-width: 1024px){
+            flex-direction: row;
+            gap: 25px;
+        }
 
         .full-url, .short-url{
             max-width: 100%;
@@ -26,16 +35,26 @@
                     line-clamp: 1; 
             -webkit-box-orient: vertical;
             font-weight: 500;
+
         }
 
         .full-url{
             color: $very-dark-violet;
+            @media screen and (min-width: 1024px){
+                flex-basis: 55%;
+            }
         }
 
         .short-url{
             border-top: 1px solid lighten($color: $gray, $amount: 12);
             width: 100%;
             padding-top: 10px;
+            @media screen and (min-width: 1024px){
+                flex-basis: 30%;
+                padding: 0;
+                border: none;
+                text-align: right;
+            }
             
             a{
                 color: $cyan;
@@ -57,6 +76,9 @@
             font-weight: 700;
             font-size: 17px;
             border-radius: 7px;
+            @media screen and (min-width: 1024px){
+                flex-basis: 15%;
+            }
 
             &:active{
                 transform: scale(0.98);

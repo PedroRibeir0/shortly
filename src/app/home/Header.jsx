@@ -1,5 +1,6 @@
 'use client'
-import {TfiMenu} from 'react-icons/tfi'
+import { TfiMenu } from 'react-icons/tfi'
+import { IoClose } from 'react-icons/io5'
 import { useState } from 'react'
 
 export default function Header() {
@@ -21,7 +22,7 @@ export default function Header() {
   return (
     <header>
       <img src="/images/logo.svg" alt="brand-logo" />
-      <TfiMenu className='menu-icon' onClick={e=>setIsMenuOpen(!isMenuOpen)}/>
+      {isMenuOpen ? <IoClose className='menu-icon' onClick={e=>setIsMenuOpen(!isMenuOpen)}/> : <TfiMenu className='menu-icon' onClick={e=>setIsMenuOpen(!isMenuOpen)}/>}
       {isMenuOpen && <Menu/>}
     </header>
   )

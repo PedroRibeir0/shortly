@@ -33,18 +33,20 @@ export default function Footer() {
         </div>
         <footer>
             <h2>Shortly</h2>
-            {footerInfo.map(item=>{
-                return <ul key={item.h}>{item.h}
-                    {item.lis.map(i=>{
-                        return <li key={i}>{i}</li>
+            <div className="footer-links">
+                {footerInfo.map(item=>{
+                    return <ul key={item.h}>{item.h}
+                        {item.lis.map(i=>{
+                            return <li key={i}>{i}</li>
+                        })}
+                    </ul>
+                })}
+                <ul className="social-icons">
+                    {contactIcons.map(item=>{
+                        return <li key={item}><img src={item} alt="social-media-icon" /></li>
                     })}
                 </ul>
-            })}
-            <ul className="social-icons">
-                {contactIcons.map(item=>{
-                    return <li key={item}><img src={item} alt="social-media-icon" /></li>
-                })}
-            </ul>
+            </div>
         </footer>
     </>
   )
