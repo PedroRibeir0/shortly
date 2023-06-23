@@ -11,21 +11,19 @@ import { useState} from 'react'
 
 export default function Index() {
 
-  const [links, setLinks] = useState([
-    {url: 'https://www.alura.com.br/artigos/como-resolver-erro-de-cross-origin-resource-sharing?gclid=Cj0KCQjw7aqkBhDPARIsAKGa0oIVcsgPbcMSNtv9Zss7qi4pENphqEgO3JLiMqeA358L1X42xn1v6g8aAqRgEALw_wcB',
-    shortUrl: 'https://api-ssl.bitly.com'
-  },
-    {url: 'https://www.alura.com.br/artigos',
-    shortUrl: 'https://api-ssl.bitluy.com'
-  }
-  ])
-  const [shotLink, setShortLink] = useState('')
+  const [links, setLinks] = useState([])
   
   const endPoint = 'https://api-ssl.bitly.com/v4/shorten'; 
   const token = 'c7c7e7d44c1a28ad7596ead52fa89fcd02c585c5'; 
   
   async function apiRequest(){
     const linkInput = document.querySelectorAll('.link-input')[0].value
+
+    if(!linkInput.includes('https://')){
+      window.alert('Invalid URL')
+      return
+    }
+
     const body = {
       long_url: linkInput,
       domain: 'bit.ly',
@@ -41,7 +39,7 @@ export default function Index() {
     })
     const data = await response.json()
     if (!data.link) {
-      window.alert('Invalid URL')
+      window.alert('error when shortening link')
       return
     }
     const newLink = {
